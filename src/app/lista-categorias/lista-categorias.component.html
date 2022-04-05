@@ -1,0 +1,14 @@
+<div class="card-body mx-2">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item my-1 pb-3 text-center">
+            <button class="btn btn-link text-secondary text-decoration-none">
+                Todos
+            </button>
+        </li>
+        <li class="list-group-item my-1 pb-3 text-center" *ngFor="let categoria of categorias">
+            <button class="btn btn-link text-secondary text-decoration-none">
+                {{categoria.nombre}}
+            </button>
+        </li>
+    </ul>
+</div>

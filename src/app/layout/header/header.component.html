@@ -1,0 +1,36 @@
+<header class="bg-light text-dark">
+    <div class="container-fluid">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a routerLink="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="./assets/images/logo.png" alt="" width="150" class="img-fluid mt-3 pb-4" />
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-2">
+                <li>
+                        <a routerLink="/" class="nav-link px-xl-5 px-3 border-1 border-end text-dark ">Inicio</a>
+                </li>
+                <li>
+                        <a routerLink="/pasteles" class="nav-link px-xl-5 px-3 border-1 border-end text-dark">Pasteles</a>
+                </li>
+                <li>
+                    <a routerLink="/carrito" class="nav-link px-xl-5 px-3 text-dark"><span class="pe-1">Carrito</span>
+                        <span class="badge rounded-pill bg-danger">
+                            0
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-5">
+                <input type="text" class="form-control form-control-dark " placeholder="Buscar..."  
+                aria-label="Search" />
+            </form>
+             <div>
+                <div class="text-xxl-end text-lg-center">  
+                        <a routerLink="/login" type="button" class="btn btn-outline-dark me-2">Iniciar Sesión</a>
+                        <a routerLink="/register" type="button" class="btn btn-warning" >Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

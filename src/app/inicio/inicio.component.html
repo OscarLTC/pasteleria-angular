@@ -1,0 +1,62 @@
+<main>
+    <div class="m-2">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide mt-2 mb-3"
+                data-bs-ride="carousel"> 
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="1000">
+                        <img src="./assets/images/pastelCarrusel1.jpg"  class="d-block w-100 carrusel" alt="..."/>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="1000">
+                        <img src="./assets/images/pastelCarrusel2.jpg"  class="d-block w-100 carrusel" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="1000">
+                        <img src="./assets/images/pastelCarrusel3.jpg"  class="d-block w-100 carrusel" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+        </div>
+        
+        <div class="container-fluid popular" id="productos">
+            <p class="fs-1 text-center pt-4">Pasteles Más Comprados</p>
+            <div class="row py-4">
+                <div class="col-xl-12">
+                    <div class="container">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                            <div class="col" *ngFor="let pastel of pasteles">
+                                <div class="card shadow-sm"><img src={{pastel.url}}
+                                        alt="" class="img-fluid card-img-top">
+                                    <div class="card-body">
+                                        <h3>{{pastel.nombre}}</h3>
+                                        <p class="card-text parrafo">{{pastel.descripcion}}</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group"><button type="button"
+                                                    class="btn btn-sm btn-outline-dark">Ver Detalle</button></div><small
+                                                class="text-muted"><span>{{pastel.precio}}</span> Soles</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,26 @@
+<div class="text-center form mx-2 mt-1">
+    <main class= "form-signin">
+        <form>
+    <img class="mb-5 img-form" src="assets/images/logoForm.png" alt="" width="150" height="150"/>
+
+    <div class="form-floating">
+        <input type="text" class="form-control name-user" required autoComplete="off" 
+        id="UserID" placeholder="User" onChange={onUsuarioChange}/>
+        <label htmlFor="floatingInput">Usuario</label>
+    </div>
+    <div class="form-floating">
+        <input type="password" class="form-control" required  
+        id="PassID" placeholder="Password" onChange={onPasswordChange}/>
+        <label htmlFor="floatingPassword" >Contraseña</label>
+    </div>
+
+    <div class="form-check form-switch mb-3">
+        <input class="form-check-input bg-warning" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+        <label class="form-check-label" htmlFor="flexSwitchCheckDefault">Recordar Contraseña</label>
+    </div>
+    <input class="w-100 btn btn-lg btn-outline-dark"  type="button" value="Iniciar Sesion"
+    onClick={onIniciarClick}/>
+    <p class="mt-4 text-muted">@PasteleriaMilagros</p>
+    </form>
+</main>
+</div>

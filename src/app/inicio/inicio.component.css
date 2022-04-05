@@ -1,0 +1,40 @@
+.carrusel {
+  border-radius: 5px;
+}
+
+.popular {
+  background: #faedcd;
+  border-radius: 5px;
+}
+
+.parrafo {
+  text-align: justify;
+}
+
+.card-body h3 {
+  font-family: "Supermercado One", cursive;
+}
+
+@media screen and (max-width: 991px) {
+  .card-body h3 {
+    font-size: 20px;
+  }
+
+  .card-body p {
+    font-size: 15px;
+  }
+
+  .main-space {
+    margin-bottom: 380px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .card-body h3 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .card-body p {
+    font-size: 20px;
+  }
+}

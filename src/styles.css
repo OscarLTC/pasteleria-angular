@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Supermercado+One&display=swap");
+* {
+  font-family: "Inconsolata", monospace;
+}
+.main-space {
+  margin-bottom: 160px;
+}
+
+@media screen and (max-width: 991px) {
+  .main-space {
+    margin-bottom: 380px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .main-space {
+    margin-bottom: 350px;
+  }
+}

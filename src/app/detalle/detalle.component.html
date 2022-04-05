@@ -1,0 +1,28 @@
+<div *ngIf="pastel.id">
+    <div class="container">
+        <div class="card mt-5">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center">
+                    <img src={{pastel.url}} class=" mx-lg-1 card-img-top rounded" alt="..." />
+                </div>
+                <div class="col-lg-8 borde-detalle">
+                    <div class="card-body">
+                        <h5 class="card-title display-6">{{pastel.nombre}}</h5>
+                        <p class="card-text"><strong>Descripcion: </strong>{{pastel.descripcion}}</p>
+                        <p class="card-text"><strong>Categoria: </strong>{{pastel.categoria.nombre}}</p>
+                        <p class="card-text"><strong>Precio: </strong>{{pastel.precio}} soles</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="mb-3">
+                                <label htmlFor="cantidad" class="form-label fw-bold">Cantidad: </label>
+                                <input type="number" class="form-control" id="cantidad" min="1"  value="1"/>
+                            </div>
+                            <div class="btn-group me-2">
+                                <button type="button" class="btn btn-sm btn-outline-dark">Añadir al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
