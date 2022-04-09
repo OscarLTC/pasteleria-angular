@@ -1,9 +1,81 @@
-<div class="container mt-5">
-     <div class="row">
-        <img src="https://pizzeriacasadecampo.com/static/images/cart/empty_cart.png" alt="" class="col-md-5"/>
-        <div class="col-md-7">
-            <h1 class="text-center display-4">Carrito Vacio</h1>
-            <p class="text-center text-muted mt-5">Debe agregar por lo menos 1 producto para que se muestre en el carrito</p>
-        </div>
+<div class="container mt-5" *ngIf="pasteles$ | async as pasteles">
+  <div class="row" *ngIf="pasteles.length === 0">
+    <img
+      src="https://pizzeriacasadecampo.com/static/images/cart/empty_cart.png"
+      alt=""
+      class="col-md-5"
+    />
+    <div class="col-md-7">
+      <h1 class="text-center display-4">Carrito Vacio</h1>
+      <p class="text-center text-muted mt-5">
+        Debe agregar por lo menos 1 producto para que se muestre en el carrito
+      </p>
     </div>
+  </div>
+  <div *ngIf="pasteles.length > 0">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pastel of pasteles">
+            <td>
+              <img
+                [src]="pastel.url"
+                alt=""
+                class="img-thumbnail"
+                width="100px"
+              />
+            </td>
+            <td class="align-middle">{{ pastel.nombre }}</td>
+            <td class="align-middle">{{ pastel.categoria.nombre }}</td>
+            <td class="align-middle">{{ pastel.precio }}</td>
+            <td class="align-middle">
+              {{ pastel.cantidad }}
+            </td>
+            <td class="align-middle">
+              S/.
+              {{ pastel.cantidad * pastel.precio }}
+            </td>
+            <td class="align-middle">
+              <button
+                class="btn btn-sm btn-danger"
+                (click)="onRemoveClick(pastel.id)"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fw-bold">Total</td>
+            <td>
+              S/.
+              {{ total(pasteles) }}
+            </td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+      <div class="text-end">
+        <button class="btn btn-lg btn-dark" (click)="onPagarClick()">
+          Ir a Pagar
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -15,6 +15,12 @@ import { RegisterComponent } from './register/register.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetalleComponent } from './detalle/detalle.component';
+import { NgxsModule } from '@ngxs/store';
+import { environment } from 'src/environments/environment';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarritoState } from './store/carrito/carrito.state';
+import { UsuarioState } from './store/usuario/usuario.state';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,19 @@ import { DetalleComponent } from './detalle/detalle.component';
     CheckoutComponent,
     DetalleComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgxsModule.forRoot([CarritoState, UsuarioState], {
+      developmentMode: !environment.production,
+    }),
+    NgxsStoragePluginModule.forRoot({
+      key: [CarritoState, UsuarioState],
+    }),
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

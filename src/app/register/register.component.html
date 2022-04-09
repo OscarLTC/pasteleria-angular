@@ -1,40 +1,106 @@
 <div class="text-center form mx-2">
-    <main class="form-signin">
-        <form>
-            <img class="mb-5 img-form" src="assets/images/logoForm.png" alt="" width="150" height="150"/>
+  <main class="form-signin">
+    <form [formGroup]="form" (submit)="onFormSubmit()">
+      <img
+        class="mb-5 img-form"
+        src="assets/images/logoForm.png"
+        alt=""
+        width="150"
+        height="150"
+      />
 
-                <div class="form-floating">
-                    <input type="text" class="form-control name-user" required autoComplete="off" 
-                    id="NombreID" placeholder="Usuario"/>
-                        <label htmlFor="floatingInput" >Nombre de Usuario</label>
-                </div>
-                <div class="form-floating">
-                    <input type="text" class="form-control mid" required autoComplete="off" 
-                    id="TelefonoID" placeholder="Telefono"/>
-                        <label htmlFor="floatingInput" >Telefono</label>
-                </div>
-                <div class="form-floating">
-                    <input type="text" class="form-control mid" required autoComplete="off" 
-                    id="DireccionID" placeholder="Direccion"/>
-                        <label htmlFor="floatingInput" >Direccion</label>
-                </div>
-                <div class="form-floating">
-                    <input type="email" class="form-control mid" required autoComplete="off" 
-                    id="EmailID" placeholder="Email"/>
-                        <label htmlFor="floatingInput" >Email</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" required placeholder="Contraseña" 
-                    />
-                        <label htmlFor="floatingPassword">Contraseña</label>
-                </div>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control name-user"
+          required
+          autoComplete="off"
+          id="NombreID"
+          placeholder="Usuario"
+          formControlName="name"
+          [class.is-invalid]="
+            form.controls['name'].invalid && form.controls['name'].touched
+          "
+        />
+        <label htmlFor="floatingInput">Nombre de Usuario</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control mid"
+          required
+          autoComplete="off"
+          id="TelefonoID"
+          placeholder="Telefono"
+          formControlName="phone"
+          [class.is-invalid]="
+            form.controls['phone'].invalid && form.controls['phone'].touched
+          "
+        />
+        <label htmlFor="floatingInput">Telefono</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control mid"
+          required
+          autoComplete="off"
+          id="DireccionID"
+          placeholder="Direccion"
+          formControlName="address"
+          [class.is-invalid]="
+            form.controls['address'].invalid && form.controls['address'].touched
+          "
+        />
+        <label htmlFor="floatingInput">Direccion</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control mid"
+          required
+          autoComplete="off"
+          id="EmailID"
+          placeholder="Email"
+          formControlName="email"
+          [class.is-invalid]="
+            form.controls['email'].invalid && form.controls['email'].touched
+          "
+        />
+        <label htmlFor="floatingInput">Email</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          required
+          placeholder="Contraseña"
+          formControlName="password"
+          [class.is-invalid]="
+            form.controls['password'].invalid &&
+            form.controls['password'].touched
+          "
+        />
+        <label htmlFor="floatingPassword">Contraseña</label>
+      </div>
 
-                <div class="form-check form-switch mb-3">
-                    <input class="form-check-input bg-warning" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-                        <label class="form-check-label" htmlFor="flexSwitchCheckDefault">Recordar Contraseña</label>
-                </div>
-                <button class="w-100 btn btn-lg btn-outline-dark" type="button">Registrarse</button>
-                <p class="mt-5 mb-3 text-muted">@PasteleriaMilagros</p>
-        </form>
-    </main>
+      <div class="form-check form-switch mb-3">
+        <input
+          class="form-check-input bg-warning"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+        />
+        <label class="form-check-label" htmlFor="flexSwitchCheckDefault"
+          >Recordar Contraseña</label
+        >
+      </div>
+      <input
+        class="w-100 btn btn-lg btn-outline-dark"
+        type="submit"
+        value="Registrar"
+      />
+      <p class="mt-5 mb-3 text-muted">@PasteleriaMilagros</p>
+    </form>
+  </main>
 </div>
