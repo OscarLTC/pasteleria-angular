@@ -26,7 +26,6 @@ export class CarritoComponent implements OnInit {
 
   onPagarClick(): void {
     const key = this.store.selectSnapshot(UsuarioSelector.isLogged);
-    console.log(key);
 
     if (!key) {
       this.router.navigateByUrl('/login');

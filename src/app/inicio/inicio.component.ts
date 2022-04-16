@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Pastel } from '../models/pastel.model';
 
@@ -11,7 +12,7 @@ import { Pastel } from '../models/pastel.model';
 export class InicioComponent implements OnInit {
   pasteles: Pastel[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.http
@@ -19,5 +20,9 @@ export class InicioComponent implements OnInit {
       .subscribe((data: Pastel[]) => {
         this.pasteles = data;
       });
+  }
+
+  onVerDetalleClick(id: number): void {
+    this.router.navigateByUrl('/pasteles/' + id);
   }
 }

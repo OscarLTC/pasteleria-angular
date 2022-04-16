@@ -21,6 +21,7 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarritoState } from './store/carrito/carrito.state';
 import { UsuarioState } from './store/usuario/usuario.state';
+import { PastelState } from './store/pastel/pastel.state';
 
 @NgModule({
   declarations: [
@@ -41,14 +42,14 @@ import { UsuarioState } from './store/usuario/usuario.state';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxsModule.forRoot([CarritoState, UsuarioState], {
+    NgxsModule.forRoot([CarritoState, UsuarioState, PastelState], {
       developmentMode: !environment.production,
     }),
     NgxsStoragePluginModule.forRoot({
-      key: [CarritoState, UsuarioState],
+      key: [CarritoState, UsuarioState, PastelState],
     }),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

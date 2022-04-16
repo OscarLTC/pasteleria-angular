@@ -10,3 +10,8 @@ export class RemovePastel {
   static readonly type = '[Carrito] Eliminar Pastel';
   constructor(public id: number) {}
 }
+
+export class LimpiarCarrito {
+  static readonly type = '[Carrito] Limpiar Carrito';
+  constructor() {}
+}

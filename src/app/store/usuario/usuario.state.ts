@@ -14,7 +14,6 @@ export class UsuarioState {
   @Action(StoreUsuario)
   almacenarUsuario(ctx: StateContext<UsuarioStateModel>, action: StoreUsuario) {
     const state = ctx.getState();
-    console.log(action);
     ctx.setState({
       ...state,
       usuario: action.usuario,

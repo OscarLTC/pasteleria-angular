@@ -1,8 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Pastel } from '../models/pastel.model';
+import { MostrarTodos } from '../store/pastel/pastel.action';
+import { PastelSelector } from '../store/pastel/pastel.selector';
 
 @Component({
   selector: 'app-lista-pasteles',
@@ -10,16 +14,17 @@ import { Pastel } from '../models/pastel.model';
   styleUrls: ['./lista-pasteles.component.css'],
 })
 export class ListaPastelesComponent implements OnInit {
-  pasteles: Pastel[] = [];
+  @Select(PastelSelector.pasteles)
+  pasteles$!: Observable<Pastel[]>;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private store: Store
+  ) {}
 
   ngOnInit(): void {
-    this.http
-      .get<Pastel[]>(environment.apiUrlSB + '/pastel/pasteles')
-      .subscribe((data: Pastel[]) => {
-        this.pasteles = data;
-      });
+    this.store.dispatch(new MostrarTodos());
   }
 
   onVerDetalleClick(id: number): void {
