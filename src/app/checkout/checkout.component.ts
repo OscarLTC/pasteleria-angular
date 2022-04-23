@@ -67,7 +67,7 @@ export class CheckoutComponent implements OnInit {
       .post(environment.apiUrlSB + '/compra/compra', request)
       .subscribe(() => {
         this.store.dispatch(new LimpiarCarrito());
-        alert('Venta Finalizada');
+        alert('Venta Exitosa! :3');
         this.router.navigateByUrl('/');
       });
   }
